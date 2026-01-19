@@ -1,46 +1,24 @@
 <!DOCTYPE html> 
-<!-- Declara el tipo de documento, en este caso HTML5 -->
 <html lang="es">
-    <!-- Define el idioma principal de la página como español -->
     <head>
-        <!-- Sección de cabecera: contiene metadatos, enlaces a estilos, scripts, etc. -->
         <meta charset="utf-8" />
-        <!-- Especifica la codificación de caracteres (UTF-8 permite caracteres especiales y acentos) -->
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <!-- Hace que el diseño sea responsive ajustando el ancho al del dispositivo -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>Wiki - Misty Waifu</title>
-        <!-- Título que aparece en la pestaña del navegador -->
-        <!-- Tipografías -->
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-        <!-- Importa las fuentes Cinzel y Lora desde Google Fonts -->
         <link rel="icon" type="image/png" href="images/MW.png">
-        <!-- Define el ícono (favicon) que se muestra en la pestaña del navegador -->
-        <!-- Font Awesome (para íconos de redes) -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-        <!-- Importa la librería de íconos Font Awesome desde CDN -->
-        <!-- Tu CSS -->
         <link rel="stylesheet" href="style.css">
-        <!-- Enlaza el archivo CSS externo donde se define el estilo de la página -->
-        <!-- GSAP -->
         <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-        <!-- Importa la librería GSAP para animaciones -->
         <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-        <!-- Extensión de GSAP para activar animaciones al hacer scroll -->
     </head>
     <body>
-        <!-- Contenido visible de la página -->
-        <!-- logo -->
         <a href="#inicio" class="logo">
             <img src="images/MW.png" class="logo-img">
         </a>
-        <!-- Enlace con clase "logo" que lleva al inicio de la página -->
-        <!-- INTRO -->
         <section class="panel intro" id="inicio">
             <div class="overlay">
                 <h1 class="intro-title">Misty Waifu</h1>
-                <!-- 🔹 Contenedor flexible para ubicar ambos recuadros lado a lado -->
                 <div class="intro-boxes-container">
-                    <!-- 🩸 Recuadro original -->
                     <div class="intro-box glow">
                         <p class="intro-desc">
                             Soy streamer, de costa rica <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1e8-1f1f7.svg" alt="Costa Rica" class="flag-cr">, mi contenido se enfoca en Souls-likes, juegos de terror y rpg's, también hay espacio para retos y momentos chill con la comunidad.<br><br>
@@ -56,7 +34,6 @@
                             <a href="https://www.youtube.com/@mistywaifu" target="_blank"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
-                    <!-- 🔹 Recuadro duplicado: Juego Favorito -->
                     <div class="intro-box glow">
                         <h2 class="intro-subtitle">Juego Favorito</h2>
                         <p class="intro-desc">
@@ -68,10 +45,7 @@
                 </div>
             </div>
         </section>
-        <!-- SECCIONES -->
-        <!-- Cada panel representa un juego diferente -->
         <section class="panel" id="panel1">
-            <!-- Panel dedicado a Silent Hill f -->
             <div class="panel-content">
                 <div class="content-box glow">
                     <h1>FromSoftware Souls</h1>
@@ -79,35 +53,26 @@
                         Los Souls me han acompañado durante mi etapa de vida, he conocido a mucha gente gracias a ellos y me han curado de la depresión.<br>Mis jefes favoritos son Gael, Bailarina, Artorias y Isshin Ashina.
                     </p>
                 </div>
-                <!-- 🔻 Sección de videos (debajo del recuadro, fuera de él) -->
                 <div class="videos-section">
-                    <!-- Contenedor general de los videos relacionados -->
                     <h2 class="videos-title">Videos</h2>
-                    <!-- Título de la sección de videos -->
                     <div class="videos-grid">
-                        <!-- Contenedor en cuadrícula que agrupa los videos -->
                         <a href="https://youtu.be/DfaQXFshshQ?si=jFwNaF8bMiezQNJX" target="_blank">
                             <img src="images/nameles.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/ebqP6qYu3aw?si=ruF0jZBPmLQs7CVD" target="_blank">
                             <img src="images/level1elden.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/DnOfF80YlmA?si=oRYYmPWY1TWmt7Ab" target="_blank">
                             <img src="images/leak.jpg">
-                            <!-- Miniatura del segundo video -->
                         </a>
                         <a href="https://youtu.be/tFr_0U32ESE?si=JnIstc4_QenVRwG5" target="_blank">
                             <img src="images/tierlist.jpg" alt="Silent Hill f Cinemática">
-                            <!-- Miniatura del tercer video -->
                         </a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="panel" id="panel2">
-            <!-- Panel dedicado a Silent Hill f -->
             <div class="panel-content">
                 <div class="content-box glow">
                     <h1>Elden Ring</h1>
@@ -115,39 +80,29 @@
                         En los siguientes videos podras ver gameplays referentes a Elden Ring.
                     </p>
                 </div>
-                <!-- 🔻 Sección de videos (debajo del recuadro, fuera de él) -->
                 <div class="videos-section">
-                    <!-- Contenedor general de los videos relacionados -->
                     <h2 class="videos-title">Videos</h2>
-                    <!-- Título de la sección de videos -->
                     <div class="videos-grid">
                         <a href="https://youtu.be/6Xklknfg1tQ?si=p-aIRuMec-7UtpmG" target="_blank">
                         <img src="images/elden-review.jpg">
                         </a>
-                        <!-- Contenedor en cuadrícula que agrupa los videos -->
                         <a href="https://youtu.be/F--VWfYc4cY?si=1Hg1CXTVYbPzXFo4" target="_blank">
                             <img src="images/randomizer1.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/EzA9Mm8-pmY?si=JPwU0O2V9-oPMIU0" target="_blank">
                             <img src="images/randomizer2.jpg">
-                            <!-- Miniatura del segundo video -->
                         </a>
                         <a href="https://youtu.be/8zsLzlqHbzs?si=vAakH87z04_NGbHL" target="_blank">
                             <img src="images/randomizer3.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                         <a href="https://youtu.be/MA4ng8iK9uc?si=5-7xSkhAEVuY2P56" target="_blank">
                             <img src="images/randomizer4.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                         <a href="https://youtu.be/1wgfnwgorGY?si=FRvozIh_cxumh5tD" target="_blank">
                             <img src="images/randomizer-final.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                         <a href="https://youtu.be/x3C39Fl_W_g?si=ALyGaZJdEqBF4V96" target="_blank">
                             <img src="images/elden-dlc.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                     </div>
                 </div>
@@ -162,23 +117,17 @@
                         En los siguientes videos podras ver gameplays referentes a Elden Ring Nightreign.
                     </p>
                 </div>
-                <!-- 🔻 Sección de videos (debajo del recuadro, fuera de él) -->
                 <div class="videos-section">
-                    <!-- Contenedor general de los videos relacionados -->
                     <h2 class="videos-title">Videos</h2>
-                    <!-- Título de la sección de videos -->
                     <div class="videos-grid">
                         <a href="https://youtu.be/-v2zAC36bmo?si=R1kgVv7KFU-jTAVJ" target="_blank">
                         <img src="images/elden-night1.jpg">
                         </a>
-                        <!-- Contenedor en cuadrícula que agrupa los videos -->
                         <a href="https://youtu.be/sdY-aUBRl7E?si=V49tW8Zd4HnW3tUA" target="_blank">
                             <img src="images/elden-night2.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/0IRudAfxv-0?si=WsWv9VuHRMvzB__H" target="_blank">
                             <img src="images/elden-night3.jpg">
-                            <!-- Miniatura del segundo video -->
                         </a>
                     </div>
                 </div>
@@ -192,23 +141,17 @@
                         En los siguientes videos podras ver gameplays referentes a Sekiro.
                     </p>
                 </div>
-                <!-- 🔻 Sección de videos (debajo del recuadro, fuera de él) -->
                 <div class="videos-section">
-                    <!-- Contenedor general de los videos relacionados -->
                     <h2 class="videos-title">Videos</h2>
-                    <!-- Título de la sección de videos -->
                     <div class="videos-grid">
                         <a href="https://youtu.be/eVz28BWPAOc?si=baM6mwKS-VGRRmhk" target="_blank">
                         <img src="images/sekiro1.jpg">
                         </a>
-                        <!-- Contenedor en cuadrícula que agrupa los videos -->
                         <a href="https://youtu.be/NDAHJsxO8aI?si=oNfy4NAZnGaGRkvT" target="_blank">
                             <img src="images/sekiro2.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/wYeXRwnS7Mo?si=5s_jLfLEE7Ft_8Sm" target="_blank">
                             <img src="images/sekiro3.jpg">
-                            <!-- Miniatura del segundo video -->
                         </a>
                     </div>
                 </div>
@@ -222,35 +165,26 @@
                         Los juegos de terror me encantan y hago contenido de vez en cuando sobre ellos.
                     </p>
                 </div>
-                <!-- 🔻 Sección de videos (debajo del recuadro, fuera de él) -->
                 <div class="videos-section">
-                    <!-- Contenedor general de los videos relacionados -->
                     <h2 class="videos-title">Videos</h2>
-                    <!-- Título de la sección de videos -->
                     <div class="videos-grid">
                         <a href="https://youtu.be/_RT_oCRE8Cs?si=lWHnjSGj7xM6qJMc" target="_blank">
                         <img src="images/horror1.jpg">
                         </a>
-                        <!-- Contenedor en cuadrícula que agrupa los videos -->
                         <a href="https://youtu.be/b6I3g05gqr8?si=tPh65JHke-_hEQb3" target="_blank">
                             <img src="images/horror2.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/DE15etk1l5M?si=mI7bz7nl8HnUGtF6" target="_blank">
                             <img src="images/horror3.jpg">
-                            <!-- Miniatura del segundo video -->
                         </a>
                         <a href="https://youtu.be/JqvwzvEqw4w?si=--2ZLIdIk8pqQyyH" target="_blank">
                             <img src="images/horror4.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                         <a href="https://youtu.be/iIPNsY4XwzA?si=R0Pxblarl_E705cn" target="_blank">
                             <img src="images/horror5.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                         <a href="https://youtu.be/Da6ADqybLXo?si=e8P8VOykw9vwoTqT" target="_blank">
                             <img src="images/horror6.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                     </div>
                 </div>
@@ -267,42 +201,31 @@
                         a sus demonios internos, culpa y verdades ocultas en una exploración de dolor emocional y horror existencial.
                     </p>
                 </div>
-                <!-- 🔻 Sección de videos (debajo del recuadro, fuera de él) -->
                 <div class="videos-section">
-                    <!-- Contenedor general de los videos relacionados -->
                     <h2 class="videos-title">Videos</h2>
-                    <!-- Título de la sección de videos -->
                     <div class="videos-grid">
-                        <!-- Contenedor en cuadrícula que agrupa los videos -->
                         <a href="https://youtu.be/0eDeyeZ8jvY?si=0jOdFWydfZDUCILz" target="_blank">
                             <img src="images/silenthill2pt1.jpg">
-                            <!-- Miniatura del primer video, con enlace a YouTube -->
                         </a>
                         <a href="https://youtu.be/X9wbzGFnwfw?si=8nYlNnYPXKCNrrms" target="_blank">
                             <img src="images/silenthill2pt2.jpg">
-                            <!-- Miniatura del segundo video -->
                         </a>
                         <a href="https://youtu.be/nPZ8bOence4?si=P-OMzUKxEeZV6zo8" target="_blank">
                             <img src="images/silenthill2pt3.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                         <a href="https://youtu.be/WFhNPh_6mu8?si=5sIR1VLohT5Nj_r4" target="_blank">
                             <img src="images/silenthill2pt4.jpg">
-                            <!-- Miniatura del tercer video -->
                         </a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="panel" id="panel7">
-            <!-- Panel dedicado a Elden Ring -->
             <div class="content-box glow">
                 <h1>Shooters</h1>
                 <p>Me gustan los shooters, alguna vez competí profesionalmente y actualmente los disfruto de manera más calmada.</p>
             </div>
         </section>
         <script src="script.js"></script>
-        <!-- Enlace al archivo JavaScript externo que controla animaciones e interacciones -->
     </body>
 </html>
-<!-- Fin del documento HTML -->

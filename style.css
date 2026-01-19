@@ -1,28 +1,24 @@
-/* === CONFIGURACIÓN GENERAL DE LA PÁGINA === */
+* {
+    box-sizing: border-box;
+}
+
 body,
 html {
     margin: 0;
-    /* Elimina el margen predeterminado del navegador */
     padding: 0;
-    /* Elimina el relleno predeterminado */
     height: 100%;
-    /* Asegura que el alto cubra toda la ventana */
     background: black;
-    /* Fondo negro general */
     font-family: 'Lora', serif;
-    /* Fuente principal del texto */
     color: #f4f4f4;
-    /* Color de texto predeterminado (gris claro) */
     overflow-x: hidden;
-    /* Evita el desplazamiento horizontal */
+    font-size: 16px;
 }
 
 
-/* === LOGO COMO IMAGEN === */
 .logo {
     position: fixed;
-    top: 20px;
-    left: 30px;
+    top: 1rem;
+    left: 1rem;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -30,41 +26,33 @@ html {
 }
 
 .logo-img {
-    width: 77px;   /* AJUSTA EL TAMAÑO AQUÍ */
+    width: 4.8125rem;
     height: auto;
     display: block;
     object-fit: contain;
     transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-/* Efecto hover para imagen */
 .logo-img:hover {
     transform: scale(1.12);
     filter: drop-shadow(0 0 12px red);
 }
 
 
-/* === CONFIGURACIÓN DE LOS PANELES === */
 .panel {
     position: relative;
-    /* Permite posicionar elementos hijos de forma absoluta */
     width: 100%;
-    /* Ocupa todo el ancho disponible */
-    height: 100vh;
-    /* Cada panel ocupa toda la altura visible del navegador */
+    min-height: 100vh;
+    height: auto;
     background-size: cover;
-    /* Ajusta la imagen de fondo para cubrir todo el panel */
     background-position: center;
-    /* Centra la imagen de fondo */
     display: flex;
-    /* Usa flexbox para centrar el contenido */
     justify-content: center;
-    /* Centra horizontalmente */
     align-items: center;
-    /* Centra verticalmente */
+    padding: 2rem 1rem;
 }
 
-/* === IMÁGENES DE FONDO PARA CADA PANEL === */
+
 #inicio {
     background-image: url('images/intro.jpeg');
 }
@@ -97,33 +85,21 @@ html {
     background-image: url('images/FPS.png');
 }
 
-/* === RECUADROS CON DESENFOQUE Y RESPLANDOR ROJO === */
+
 .content-box,
 .intro-box {
-
     background: rgba(0, 0, 0, 0.55);
-    /* Fondo semitransparente negro */
     backdrop-filter: blur(8px);
-    /* Aplica desenfoque al fondo detrás del recuadro */
-    padding: 40px 60px;
-    /* Espaciado interno del contenido */
-    border-radius: 16px;
-    /* Bordes redondeados */
+    padding: 2rem 3rem;
+    border-radius: 1rem;
     text-align: center;
-    /* Centra el texto dentro del recuadro */
-    max-width: 668px;
-    /* Limita el ancho máximo del recuadro */
+    max-width: 90%;
     transition: all 0.6s ease;
-    /* Transición suave en todos los cambios */
     border: 1px solid rgba(255, 0, 0, 0.4);
-    /* Borde rojo semitransparente */
     box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
-    /* Sombra roja difusa */
     animation: glowPulse 4s ease-in-out infinite;
-    /* Efecto de resplandor animado */
 }
 
-/* === EFECTO DE RESPLANDOR ANIMADO (PARPADEO SUAVE) === */
 @keyframes glowPulse {
     0% {
         box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
@@ -138,466 +114,203 @@ html {
     }
 }
 
-/* === EFECTO AL PASAR EL MOUSE SOBRE LOS RECUADROS === */
 .content-box:hover,
 .intro-box:hover {
     transform: scale(1.03);
-    /* Aumenta ligeramente el tamaño */
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.55),
-        0 0 60px rgba(255, 0, 0, 0.25);
-    /* Brillo más intenso */
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.55), 0 0 60px rgba(255, 0, 0, 0.25);
     border-color: rgba(255, 0, 0, 0.8);
-    /* Borde rojo más fuerte */
-    transition: all 0.4s ease-in-out;
-    /* Transición fluida */
 }
 
-/* === TÍTULOS DENTRO DE LOS RECUADROS === */
+
 .content-box h1 {
     font-family: 'Cinzel', serif;
-    /* Fuente de estilo clásico */
-    font-size: 2.5rem;
-    /* Tamaño grande para destacar */
-    margin-bottom: 15px;
-    /* Espacio inferior */
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color: #a10000;
-    /* Rojo brillante */
 }
 
-/* === PÁRRAFOS DE LOS RECUADROS === */
+
 .content-box p {
     font-family: 'Lora', serif;
-    /* Fuente complementaria legible */
-    font-size: 1.1rem;
-    /* Tamaño de texto cómodo */
+    font-size: 1rem;
     color: #ddd;
-    /* Gris claro */
     line-height: 1.6;
-    /* Espaciado entre líneas */
 }
 
-/* === INTRODUCCIÓN (SECCIÓN PRINCIPAL) === */
+
 .intro .overlay {
     display: flex;
-    /* Usa flexbox para organizar el contenido */
     flex-direction: column;
-    /* Coloca los elementos en columna */
     align-items: center;
-    /* Centra horizontalmente */
     justify-content: center;
-    /* Centra verticalmente */
     height: 100%;
-    /* Ocupa toda la altura del panel */
-
-    left: 5px;
-    top: 5px;
+    width: 100%;
+    padding: 0 1.5rem;
+    padding-top: 8rem;
+    box-sizing: border-box;
 }
 
-/* === EFECTO VISUAL DEL TÍTULO PRINCIPAL === */
+
 .intro-title {
-
-    margin-top: -102px;
-    /* Mueve hacia arriba */
-
     font-family: 'Cinzel', serif;
-    /* Fuente elegante */
-    font-size: 16.2rem;
-    /* Tamaño muy grande para impacto visual */
+    font-size: 6rem;
     letter-spacing: 2px;
-    /* Espaciado entre letras */
-    margin-bottom: 20px;
-    /* Separación inferior */
+    margin: 0 0 1.5rem 0;
     color: #000000;
-    /* Rojo intenso */
     text-shadow:
         0 0 8px rgba(255, 0, 0, 0.8),
         0 0 16px rgba(255, 50, 50, 0.7),
         0 0 32px rgba(255, 100, 100, 0.5),
         2px 2px 6px rgba(0, 0, 0, 0.7);
-    /* Capas de brillo y sombra */
     -webkit-text-stroke: 2px #db0000;
-    /* Contorno oscuro sutil */
     animation: titlePulse 3s ease-in-out infinite;
-    /* Brillo animado */
+    text-align: center;
+    line-height: 1;
+    max-width: 95%;
 }
 
-/* === ANIMACIÓN DEL BRILLO DEL TÍTULO === */
 @keyframes titlePulse {
     0% {
-        text-shadow:
-            0 0 6px rgba(255, 0, 0, 0.6),
-            0 0 14px rgba(255, 50, 50, 0.5),
-            0 0 28px rgba(255, 100, 100, 0.4),
-            2px 2px 6px rgba(0, 0, 0, 0.7);
+        text-shadow: 0 0 6px rgba(255, 0, 0, 0.6), 0 0 14px rgba(255, 50, 50, 0.5), 0 0 28px rgba(255, 100, 100, 0.4), 2px 2px 6px rgba(0, 0, 0, 0.7);
     }
 
     50% {
-        text-shadow:
-            0 0 12px rgba(255, 0, 0, 1),
-            0 0 30px rgba(255, 50, 50, 0.9),
-            0 0 50px rgba(255, 100, 100, 0.8),
-            2px 2px 8px rgba(0, 0, 0, 0.7);
+        text-shadow: 0 0 12px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 50, 50, 0.9), 0 0 50px rgba(255, 100, 100, 0.8), 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     100% {
-        text-shadow:
-            0 0 6px rgba(255, 0, 0, 0.6),
-            0 0 14px rgba(255, 50, 50, 0.5),
-            0 0 28px rgba(255, 100, 100, 0.4),
-            2px 2px 6px rgba(0, 0, 0, 0.7);
+        text-shadow: 0 0 6px rgba(255, 0, 0, 0.6), 0 0 14px rgba(255, 50, 50, 0.5), 0 0 28px rgba(255, 100, 100, 0.4), 2px 2px 6px rgba(0, 0, 0, 0.7);
     }
 }
 
-/* === DESCRIPCIÓN DE LA INTRODUCCIÓN === */
+
 .intro-desc {
-    font-size: 29px;
-    /* Texto grande para legibilidad */
+    font-size: 1.2rem;
     line-height: 1.6;
-    /* Espaciado vertical */
-    margin-bottom: 20px;
-    /* Separación inferior */
+    margin-bottom: 1.25rem;
     color: #f4f4f4;
-    /* Blanco suave */
 }
 
-/* === ICONOS DE REDES SOCIALES === */
 .social-icons {
     display: flex;
-    /* Usa flexbox para alinear íconos */
     justify-content: center;
-    /* Centra horizontalmente */
-    gap: 24px;
-    /* Espaciado entre íconos */
-    margin-top: 20px;
-    /* Separación superior */
+    gap: 1.5rem;
+    margin-top: 1.25rem;
 }
 
 .social-icons a {
     color: white;
-    /* Íconos blancos por defecto */
-    font-size: 40px;
-    /* Tamaño grande de ícono */
+    font-size: 1.8rem;
     transition: all .3s ease;
-    /* Transición suave en hover */
     text-decoration: none;
-    /* Quita subrayado */
 }
 
-/* Efecto hover de los íconos sociales */
 .social-icons a:hover {
     color: #c93f3f;
-    /* Cambia el color a rojo claro */
     text-shadow: 0 0 12px #a10000, 0 0 24px #a10000;
-    /* Brillo rojo */
     transform: scale(1.2);
-    /* Aumenta ligeramente el tamaño */
 }
 
 /* === SECCIÓN DE VIDEOS === */
 .videos-section {
     text-align: center;
-    /* Centra todo el texto y los elementos */
-    margin-top: 40px;
-    /* Separación superior del bloque */
+    margin-top: 2.5rem;
+    width: 100%;
 }
 
 .videos-title {
-    font-size: 1.8rem;
-    /* Tamaño del título */
+    font-size: 1.5rem;
     color: #a10000;
-    /* Rojo brillante */
-    margin-bottom: 25px;
-    /* Separación inferior */
+    margin-bottom: 1.5rem;
     text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-    /* Brillo suave */
 }
 
 .videos-grid {
-    display: flex;
-    /* Usa flexbox para organizar las miniaturas */
-    flex-wrap: wrap;
-    /* Permite que los videos se ajusten en varias filas */
-    justify-content: center;
-    /* Centra horizontalmente */
-    gap: 40px;
-    /* Espaciado entre videos */
-    padding: 0 40px;
-    /* Espaciado lateral para margen interno */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    justify-items: center;
 }
 
-
-/* === MINIATURAS DE VIDEOS === */
 .videos-grid a {
-    display: inline-block;
-    /* Permite aplicar márgenes y transformaciones */
-    border-radius: 12px;
-    /* Bordes redondeados */
+    display: block;
+    border-radius: 0.75rem;
     overflow: hidden;
-    /* Oculta lo que sobresalga del borde */
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    /* Animación de movimiento y sombra */
     box-shadow: 0 0 14px rgba(255, 0, 0, 0.25);
-    /* Sombra roja ligera */
     position: relative;
-    /* Necesario para el pseudo-elemento ::before */
+    width: 100%;
+    max-width: 320px;
 }
 
-/* Marco rojo brillante alrededor de cada miniatura */
 .videos-grid a::before {
     content: '';
-    /* Elemento vacío decorativo */
     position: absolute;
-    /* Se posiciona sobre la imagen */
     inset: 0;
-    /* Ocupa todo el contenedor */
-    border-radius: 12px;
-    /* Bordes redondeados iguales a la imagen */
+    border-radius: 0.75rem;
     border: 2px solid rgba(255, 0, 0, 0.35);
-    /* Borde rojo semitransparente */
     box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
-    /* Brillo sutil */
     transition: all 0.35s ease;
-    /* Transición para hover */
     pointer-events: none;
-    /* No interfiere con clics */
 }
 
 .videos-grid a img {
     display: block;
-    /* Quita el espacio inferior de las imágenes */
-    width: 320px;
-    /* Ancho fijo */
-    height: 180px;
-    /* Alto fijo (relación 16:9) */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
     object-fit: cover;
-    /* Ajusta la imagen sin deformarla */
-    border-radius: 12px;
-    /* Bordes redondeados */
+    border-radius: 0.75rem;
     transition: transform 0.4s ease, filter 0.4s ease;
-    /* Animación al pasar el mouse */
     filter: brightness(0.9);
-    /* Ligeramente oscurecida por defecto */
 }
 
-/* === EFECTO HOVER DE LAS MINIATURAS === */
 .videos-grid a:hover img {
     transform: scale(1.08);
-    /* Zoom ligero */
     filter: brightness(1);
-    /* Aclara la imagen */
 }
 
 .videos-grid a:hover::before {
     border-color: rgba(255, 0, 0, 0.8);
-    /* Borde rojo más fuerte */
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6),
-        0 0 40px rgba(255, 50, 50, 0.4);
-    /* Resplandor más intenso */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 50, 50, 0.4);
 }
 
 .videos-grid a:hover {
     transform: scale(1.05);
-    /* Zoom general del contenedor */
     box-shadow: 0 0 28px rgba(255, 0, 0, 0.4);
-    /* Brillo adicional */
 }
 
-
-#panel1 .panel-content {
+.panel-content {
     display: flex;
-    /* Usa flexbox para disposición vertical */
     flex-direction: column;
-    /* Alinea los elementos en columna */
     align-items: center;
-    /* Centra horizontalmente */
     justify-content: flex-start;
-    /* Comienza desde la parte superior */
-    gap: 40px;
-    /* Espacio entre recuadro y videos */
-    margin-top: 60px;
-    /* Separación desde el inicio del panel */
+    gap: 2.5rem;
+    margin-top: 3.75rem;
+    width: 100%;
+    max-width: 90%;
 }
 
-/* Ajusta altura del panel 8 para incluir videos */
-#panel1 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-
-/* === PANEL 8: AJUSTES ESPECIALES === */
-#panel2 .panel-content {
-    display: flex;
-    /* Usa flexbox para disposición vertical */
-    flex-direction: column;
-    /* Alinea los elementos en columna */
-    align-items: center;
-    /* Centra horizontalmente */
-    justify-content: flex-start;
-    /* Comienza desde la parte superior */
-    gap: 40px;
-    /* Espacio entre recuadro y videos */
-    margin-top: 60px;
-    /* Separación desde el inicio del panel */
-}
-
-/* Ajusta altura del panel 8 para incluir videos */
-#panel2 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-#panel3 .panel-content {
-    display: flex;
-    /* Usa flexbox para disposición vertical */
-    flex-direction: column;
-    /* Alinea los elementos en columna */
-    align-items: center;
-    /* Centra horizontalmente */
-    justify-content: flex-start;
-    /* Comienza desde la parte superior */
-    gap: 40px;
-    /* Espacio entre recuadro y videos */
-    margin-top: 60px;
-    /* Separación desde el inicio del panel */
-}
-
-/* Ajusta altura del panel 8 para incluir videos */
-#panel3 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-
-#panel4 .panel-content {
-    display: flex;
-    /* Usa flexbox para disposición vertical */
-    flex-direction: column;
-    /* Alinea los elementos en columna */
-    align-items: center;
-    /* Centra horizontalmente */
-    justify-content: flex-start;
-    /* Comienza desde la parte superior */
-    gap: 40px;
-    /* Espacio entre recuadro y videos */
-    margin-top: 60px;
-    /* Separación desde el inicio del panel */
-}
-
-/* Ajusta altura del panel 8 para incluir videos */
-#panel4 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-#panel5 .panel-content {
-    display: flex;
-    /* Usa flexbox para disposición vertical */
-    flex-direction: column;
-    /* Alinea los elementos en columna */
-    align-items: center;
-    /* Centra horizontalmente */
-    justify-content: flex-start;
-    /* Comienza desde la parte superior */
-    gap: 40px;
-    /* Espacio entre recuadro y videos */
-    margin-top: 60px;
-    /* Separación desde el inicio del panel */
-}
-
-/* Ajusta altura del panel 8 para incluir videos */
-#panel5 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-#panel6 .panel-content {
-    display: flex;
-    /* Usa flexbox para disposición vertical */
-    flex-direction: column;
-    /* Alinea los elementos en columna */
-    align-items: center;
-    /* Centra horizontalmente */
-    justify-content: flex-start;
-    /* Comienza desde la parte superior */
-    gap: 40px;
-    /* Espacio entre recuadro y videos */
-    margin-top: 60px;
-    /* Separación desde el inicio del panel */
-}
-
-/* Ajusta altura del panel 8 para incluir videos */
-#panel6 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-
-
-
-/* Ajusta altura del panel 8 para incluir videos */
-#6 {
-    height: auto;
-    /* Permite que el alto crezca según contenido */
-    min-height: 100vh;
-    /* Asegura ocupar al menos una pantalla completa */
-    padding-bottom: 60px;
-    /* Espacio inferior adicional */
-}
-
-
-/* === CONTENEDOR PARA LOS DOS RECUADROS DE INTRODUCCIÓN === */
 .intro-boxes-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 1.25rem;
+    width: 100%;
 }
 
-/* === TÍTULO DEL NUEVO RECUADRO === */
+
 .intro-subtitle {
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #a10000;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
 }
-
-/* === RESPONSIVO PARA CELULARES === */
-@media (max-width: 900px) {
-    .intro-boxes-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 
 .flag-cr {
     width: 1.1em;
@@ -607,3 +320,157 @@ html {
 
 
 
+
+@media (max-width: 480px) {
+    .intro-title {
+        font-size: 3.8rem;
+    }
+
+    .intro-desc {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .videos-title {
+        font-size: 1.2rem;
+    }
+
+    .content-box,
+    .intro-box {
+        padding: 1.5rem 2rem;
+        max-width: 100%;
+    }
+
+    .logo {
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+
+    .logo-img {
+        width: 3rem;
+    }
+}
+
+@media (min-width: 481px) {
+    .content-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro-title {
+        font-size: 9rem;
+    }
+
+    .intro-desc {
+        font-size: 1.4rem;
+    }
+
+    .social-icons a {
+        font-size: 2.2rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .content-box,
+    .intro-box {
+        max-width: 80%;
+        padding: 2.5rem 3.75rem;
+    }
+
+    .panel {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Tablets grandes / Desktops (≥1024px) */
+@media (min-width: 1024px) {
+    .content-box h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-title {
+        font-size: 16.2rem;
+    }
+
+    .intro-desc {
+        font-size: 1.8125rem;
+    }
+
+    .social-icons a {
+        font-size: 2.5rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .videos-grid a {
+        max-width: none;
+    }
+
+    .content-box,
+    .intro-box {
+        max-width: 41.75rem;
+        padding: 2.5rem 3.75rem;
+    }
+
+    .panel {
+        padding: 4rem 3rem;
+    }
+
+    .logo-img {
+        width: 4.8125rem;
+    }
+
+    .intro-boxes-container {
+        flex-wrap: nowrap;
+    }
+}
+
+
+.intro-title {
+    margin-top: -2rem !important;
+}
+
+.intro .overlay {
+    padding-top: 6rem !important;
+}
+
+@media (max-width: 480px) {
+    .intro-title {
+        margin-top: -1.5rem !important;
+    }
+
+    .intro .overlay {
+        padding-top: 4.5rem !important;
+    }
+}
+
+@media (min-width: 481px) {
+    .intro-title {
+        margin-top: -2.5rem !important;
+    }
+
+    .intro .overlay {
+        padding-top: 8rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .intro-title {
+        margin-top: -4rem !important;
+    }
+
+    .intro .overlay {
+        padding-top: 10rem !important;
+    }
+}
