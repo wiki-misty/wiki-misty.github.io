@@ -1,0 +1,527 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    font-family: 'Lora', serif;
+    color: #f4f4f4;
+    overflow-x: hidden;
+    font-size: 16px;
+
+    /* Mejor experiencia en iOS */
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+/* =======================
+   FIX CLICK LOGO (clave)
+   ======================= */
+.logo {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 99999;
+    /* subimos por seguridad */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    pointer-events: auto;
+    /* aseguramos click */
+    touch-action: manipulation;
+    /* mejor tap en móviles */
+}
+
+.logo-img {
+    width: 4.8125rem;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    transition: transform 0.25s ease, filter 0.25s ease;
+    will-change: transform, filter;
+
+    pointer-events: auto;
+    /* aseguramos click */
+}
+
+.logo-img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 12px red);
+}
+
+.panel {
+    position: relative;
+    width: 100%;
+
+    /* Fix 100vh en móviles (iOS/Android) */
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+
+    will-change: transform, opacity;
+}
+
+/* IMPORTANTE: overlay no debe bloquear click del logo */
+.overlay {
+    pointer-events: none;
+    /* no atrapa taps/clicks */
+}
+
+.overlay * {
+    pointer-events: auto;
+    /* pero sí permite interacción interna */
+}
+
+/* Fondos optimizados */
+#inicio {
+    background-image: image-set(url("images/intro-mob.webp") 1x,
+            url("images/intro-desk.webp") 2x);
+}
+
+#panel1 {
+    background-image: image-set(url("images/fromsoftware-mob.webp") 1x,
+            url("images/fromsoftware-desk.webp") 2x);
+}
+
+#panel2 {
+    background-image: image-set(url("images/elden-ring-mob.webp") 1x,
+            url("images/elden-ring-desk.webp") 2x);
+}
+
+#panel3 {
+    background-image: image-set(url("images/elden-ring-night-mob.webp") 1x,
+            url("images/elden-ring-night-desk.webp") 2x);
+}
+
+#panel4 {
+    background-image: image-set(url("images/sekiro-mob.webp") 1x,
+            url("images/sekiro-desk.webp") 2x);
+}
+
+#panel5 {
+    background-image: image-set(url("images/horrotgm-mob.webp") 1x,
+            url("images/horrotgm-desk.webp") 2x);
+}
+
+#panel6 {
+    background-image: image-set(url("images/silent-hill2-mob.webp") 1x,
+            url("images/silent-hill2-desk.webp") 2x);
+}
+
+#panel7 {
+    background-image: image-set(url("images/FPS-mob.webp") 1x,
+            url("images/FPS-desk.webp") 2x);
+}
+
+.content-box,
+.intro-box {
+    background: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 90%;
+
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+
+    transition: transform 0.6s ease, box-shadow 0.6s ease, border-color 0.6s ease;
+    animation: glowPulse 4s ease-in-out infinite;
+
+    will-change: transform, opacity, box-shadow;
+    transform: translateZ(0);
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+    }
+
+    50% {
+        box-shadow: 0 0 22px rgba(255, 0, 0, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+    }
+}
+
+.content-box:hover,
+.intro-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.55), 0 0 60px rgba(255, 0, 0, 0.25);
+    border-color: rgba(255, 0, 0, 0.8);
+}
+
+.content-box h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #a10000;
+}
+
+.content-box p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.intro .overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 1.5rem;
+    padding-top: 8rem;
+    box-sizing: border-box;
+}
+
+.intro-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3.8rem, 10vw, 16.2rem);
+    letter-spacing: 2px;
+    margin: 0 0 1.5rem 0;
+    color: #000000;
+
+    text-shadow:
+        0 0 8px rgba(255, 0, 0, 0.8),
+        0 0 16px rgba(255, 50, 50, 0.7),
+        0 0 32px rgba(255, 100, 100, 0.5),
+        2px 2px 6px rgba(0, 0, 0, 0.7);
+
+    -webkit-text-stroke: 2px #db0000;
+    animation: titlePulse 3s ease-in-out infinite;
+    text-align: center;
+    line-height: 1;
+    max-width: 95%;
+
+    will-change: transform, opacity, text-shadow;
+    transform: translateZ(0);
+}
+
+@keyframes titlePulse {
+    0% {
+        text-shadow:
+            0 0 6px rgba(255, 0, 0, 0.6),
+            0 0 14px rgba(255, 50, 50, 0.5),
+            0 0 28px rgba(255, 100, 100, 0.4),
+            2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    50% {
+        text-shadow:
+            0 0 12px rgba(255, 0, 0, 1),
+            0 0 30px rgba(255, 50, 50, 0.9),
+            0 0 50px rgba(255, 100, 100, 0.8),
+            2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    100% {
+        text-shadow:
+            0 0 6px rgba(255, 0, 0, 0.6),
+            0 0 14px rgba(255, 50, 50, 0.5),
+            0 0 28px rgba(255, 100, 100, 0.4),
+            2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+}
+
+.intro-desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    color: #f4f4f4;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    transition: transform .3s ease, color .3s ease, text-shadow .3s ease;
+    text-decoration: none;
+    will-change: transform;
+}
+
+/* SECCIÓN VIDEOS */
+.videos-section {
+    text-align: center;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+
+.videos-title {
+    font-size: 1.5rem;
+    color: #a10000;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    justify-items: center;
+}
+
+.videos-grid a {
+    display: block;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 0 14px rgba(255, 0, 0, 0.25);
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    will-change: transform, box-shadow;
+    transform: translateZ(0);
+}
+
+.videos-grid a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    border: 2px solid rgba(255, 0, 0, 0.35);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    pointer-events: none;
+}
+
+.videos-grid a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.9);
+    will-change: transform, filter;
+    transform: translateZ(0);
+}
+
+.videos-grid a:hover img {
+    transform: scale(1.08);
+    filter: brightness(1);
+}
+
+.videos-grid a:hover::before {
+    border-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 50, 50, 0.4);
+}
+
+.videos-grid a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 28px rgba(255, 0, 0, 0.4);
+}
+
+.panel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    margin-top: 3.75rem;
+    width: 100%;
+    max-width: 90%;
+}
+
+.intro-boxes-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    width: 100%;
+}
+
+.intro-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #a10000;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.flag-cr {
+    width: 1.1em;
+    height: auto;
+    vertical-align: -0.1em;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .intro-desc {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .videos-title {
+        font-size: 1.2rem;
+    }
+
+    .content-box,
+    .intro-box {
+        padding: 1.5rem 2rem;
+        max-width: 100%;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        animation-duration: 6s;
+    }
+
+    .logo {
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+
+    .logo-img {
+        width: 3rem;
+    }
+}
+
+@media (min-width: 481px) {
+    .content-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro-desc {
+        font-size: 1.4rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .content-box,
+    .intro-box {
+        max-width: 80%;
+        padding: 2.5rem 3.75rem;
+    }
+
+    .panel {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-box h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-desc {
+        font-size: 1.8125rem;
+    }
+
+    .social-icons a {
+        font-size: 2.5rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .videos-grid a {
+        max-width: none;
+    }
+
+    .content-box,
+    .intro-box {
+        max-width: 41.75rem;
+        padding: 2.5rem 3.75rem;
+    }
+
+    .panel {
+        padding: 4rem 3rem;
+    }
+
+    .logo-img {
+        width: 4.8125rem;
+    }
+
+    .intro-boxes-container {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Ajustes de márgenes */
+.intro-title {
+    margin-top: -2rem !important;
+}
+
+.intro .overlay {
+    padding-top: 6rem !important;
+}
+
+@media (max-width: 480px) {
+    .intro-title {
+        margin-top: -1.5rem !important;
+    }
+
+    .intro .overlay {
+        padding-top: 4.5rem !important;
+    }
+}
+
+@media (min-width: 481px) {
+    .intro-title {
+        margin-top: -2.5rem !important;
+    }
+
+    .intro .overlay {
+        padding-top: 8rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .intro-title {
+        margin-top: -4rem !important;
+    }
+
+    .intro .overlay {
+        padding-top: 10rem !important;
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
