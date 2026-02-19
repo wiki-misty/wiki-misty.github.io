@@ -607,3 +607,149 @@ html {
 
 
 
+/* =====================================================
+   RESPONSIVE GLOBAL (NO MODIFICA DISEÑO ORIGINAL)
+===================================================== */
+
+/* ----------- Tablets grandes ----------- */
+@media (max-width: 1200px) {
+
+    .intro-title {
+        font-size: 10rem;
+        margin-top: -60px;
+    }
+
+    .content-box,
+    .intro-box {
+        padding: 30px 40px;
+        max-width: 90%;
+    }
+
+    .videos-grid {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .videos-grid a img {
+        width: 280px;
+        height: 158px;
+    }
+}
+
+
+/* ----------- Tablets / iPad ----------- */
+@media (max-width: 992px) {
+
+    .intro-title {
+        font-size: 7rem;
+        margin-top: -40px;
+        text-align: center;
+    }
+
+    .intro-desc {
+        font-size: 20px;
+    }
+
+    .content-box h1 {
+        font-size: 2rem;
+    }
+
+    .content-box p {
+        font-size: 1rem;
+    }
+
+    .videos-grid a img {
+        width: 240px;
+        height: 135px;
+    }
+
+    .logo-img {
+        width: 60px;
+    }
+}
+
+
+/* ----------- Celulares grandes ----------- */
+@media (max-width: 768px) {
+
+    .panel {
+        padding: 40px 0;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .intro-title {
+        font-size: 4.5rem;
+        margin-top: -20px;
+        -webkit-text-stroke: 1px #db0000;
+    }
+
+    .intro-desc {
+        font-size: 18px;
+    }
+
+    .content-box,
+    .intro-box {
+        padding: 25px;
+    }
+
+    .videos-grid {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .videos-grid a img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .social-icons a {
+        font-size: 28px;
+    }
+
+    .logo {
+        top: 15px;
+        left: 15px;
+    }
+
+    .logo-img {
+        width: 50px;
+    }
+}
+
+
+/* ----------- Celulares pequeños (iPhone SE, Android compactos) ----------- */
+@media (max-width: 480px) {
+
+    .intro-title {
+        font-size: 3rem;
+        margin-top: 0;
+        letter-spacing: 1px;
+    }
+
+    .intro-desc {
+        font-size: 16px;
+    }
+
+    .content-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .content-box p {
+        font-size: 0.95rem;
+    }
+
+    .videos-title {
+        font-size: 1.4rem;
+    }
+
+    .social-icons {
+        gap: 16px;
+    }
+
+    .social-icons a {
+        font-size: 24px;
+    }
+}
