@@ -605,4 +605,136 @@ html {
     vertical-align: -0.1em;
 }
 
+/* ======================================== */
+/* ========= FIX RESPONSIVE REAL ========= */
+/* ======================================== */
 
+/* Nunca permitir desbordes */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Evita que los recuadros choquen con bordes */
+.content-box,
+.intro-box {
+    width: 100%;
+    max-width: 668px;
+    margin: 0 auto;
+}
+
+/* ======================================== */
+/* ============ TABLETS 1024px ============ */
+/* ======================================== */
+
+@media (max-width: 1024px) {
+
+    .intro-title {
+        font-size: 7rem;
+        margin-top: -40px;
+    }
+
+    .logo-img {
+        width: 60px;
+    }
+}
+
+/* ======================================== */
+/* ============ 768px ===================== */
+/* ======================================== */
+
+@media (max-width: 768px) {
+
+    .panel {
+        padding: 40px 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .intro-title {
+        font-size: 4.5rem;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .logo {
+        top: 15px;
+        left: 15px;
+    }
+
+    .logo-img {
+        width: 50px;
+    }
+
+    .intro-desc {
+        font-size: 18px;
+    }
+
+    .content-box,
+    .intro-box {
+        padding: 25px;
+        width: 100%;
+    }
+
+    .videos-grid {
+        gap: 25px;
+        padding: 0;
+    }
+
+    .videos-grid a img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+    }
+}
+
+/* ======================================== */
+/* ============ 480px (CELULAR) =========== */
+/* ======================================== */
+
+@media (max-width: 480px) {
+
+    .panel {
+        padding: 60px 18px;
+    }
+
+    .intro-title {
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-top: 40px;
+        -webkit-text-stroke: 1px #db0000;
+    }
+
+    .logo {
+        top: 10px;
+        left: 10px;
+    }
+
+    .logo-img {
+        width: 42px;
+    }
+
+    .intro-desc {
+        font-size: 16px;
+    }
+
+    .content-box h1 {
+        font-size: 1.4rem;
+    }
+
+    .content-box p {
+        font-size: 0.95rem;
+    }
+
+    .social-icons a {
+        font-size: 26px;
+    }
+
+    .videos-title {
+        font-size: 1.3rem;
+    }
+}
